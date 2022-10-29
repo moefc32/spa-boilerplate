@@ -1,2 +1,2 @@
-# spa-boilerplate
-Boilerplate for single page application
+# SPA-Boilerplate
+Boilerplate for single page application, enhanced with Bootstrap 5 and Alpine.js

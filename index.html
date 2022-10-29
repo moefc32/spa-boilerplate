@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="res/img/favicon.svg">
+    <title>SPA Boilerplate</title>
+
+    <link rel="stylesheet" href="res/css/style.css">
+    <script src="res/js/alpine.min.js" defer></script>
+    <script src="res/js/script.js"></script>
+</head>
+
+<body class="d-flex" x-data="init">
+    <aside class="d-flex flex-column flex-shrink-0 p-3 bg-light shadow">
+        <a role="button" @click="openLocation('/')"
+            class="d-block mb-3 mb-md-0 mx-auto link-dark text-decoration-none">
+            <span class="fs-4">SPA Boilerplate</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a role="button" class="nav-link" @click="openLocation('/')"
+                    :class="(Alpine.store('currentPath') == '/') ? 'active' : 'link-dark'"
+                    :disabled="(Alpine.store('currentPath') == '/') ? true : false">
+                    View Page A
+                </a>
+            </li>
+            <li class="nav-item">
+                <a role="button" class="nav-link" @click="openLocation('b')"
+                    :class="(Alpine.store('currentPath') == 'b') ? 'active' : 'link-dark'"
+                    :disabled="(Alpine.store('currentPath') == 'b') ? true : false">
+                    View Page B
+                </a>
+            </li>
+            <li>
+                <a role="button" class="nav-link" @click="openLocation('c')"
+                    :class="(Alpine.store('currentPath') == 'c') ? 'active' : 'link-dark'"
+                    :disabled="(Alpine.store('currentPath') == 'c') ? true : false">
+                    View Page C (Doesn't Exist)
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="d-flex justify-content-center align-items-stretch flex-column w-100">
+        <div id="main-content" class="container-fluid flex-fill p-5"></div>
+        <footer class="border-top mx-3 py-3 text-center text-muted">Mfc &copy; 2022</footer>
+    </div>
+
+    <script src="res/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
